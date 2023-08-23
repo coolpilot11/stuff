@@ -1,0 +1,3077 @@
+[{
+    "mass": 75000,
+    "dragFactor": 3.9,
+    "tensorFactor": 0.0099,
+    "com": [0, -3, 0],
+    "gearTravelTime": 12,
+    "flapsTravelTime": 3,
+    "flapsSteps": 4,
+     "airbrakesTravelTime": 0.5,
+    "reverse": true,
+
+    "cockpitShadowMapMaxDistance": 50,
+    "cockpitScaleFix": 2,
+
+
+    "zeroRPMAltitude": 90000,
+    "minRPM": 1000,
+    "maxRPM": 10000,
+    "driveRatio": 0.25,
+    "engineInertia": 1,
+    "startupTime": 15,
+    "shutdownTime": 30,
+    "brakeDamping": 1.5,
+    "startAltitude": 4.6,
+    "startTilt": 0,
+    "minimumSpeed": 200,
+
+	"autopilot": true,
+  
+    "instruments": {
+  		"airspeedJet": {
+        "animations": [
+            {"value": "view", "type": "show", "notEq": "cockpit"}
+        ]
+      },
+        "attitudeJet": {
+            "animations": [
+                {"value": "view", "type": "show", "notEq": "cockpit"}
+            ]
+        },
+  		"altitude": {
+        "animations": [
+            {"value": "view", "type": "show", "notEq": "cockpit"}
+        ]
+      },
+  		"varioJet": {
+        "animations": [
+            {"value": "view", "type": "show", "notEq": "cockpit"}
+        ]
+      },
+  		"compass": {
+        "animations": [
+            {"value": "view", "type": "show", "notEq": "cockpit"}
+        ]
+      },
+  		"rpmJet": {
+        "animations": [
+            {"value": "view", "type": "show", "notEq": "cockpit"}
+        ]
+      },
+"spoilers": "",
+        "brakes": "",
+        "gear": "",
+        "flaps": "",
+         "hud": {
+			"overlay": {
+				"animations": [ {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+				"url": "images/instruments/hud/frame.png",
+				"size": {
+					"x": 400,
+					"y": 400
+				},
+				"anchor": {
+					"x": 200,
+					"y": 200
+				},
+				"position": {
+					"x": 0,
+					"y": 0
+				},
+				"drawOrder": 1,
+				"rescale": true,
+				"rescalePosition": true,
+				"overlays": [{
+					"animations": [{
+						"type": "rotate",
+						"value": "aroll",
+						"ratio": -1,
+						"min": -180,
+						"max": 180
+					}, {
+						"type": "translateY",
+						"value": "atilt",
+						"ratio": -18.138,
+						"offset": 1905,
+						"min": -90,
+						"max": 90
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/attitude.png",
+					"anchor": {
+						"x": 54,
+						"y": 100
+					},
+					"size": {
+						"x": 250,
+						"y": 420
+					},
+					"position": {
+						"x": 0,
+						"y": 0
+					},
+					"drawOrder": 0,
+					"iconFrame": {
+						"x": 108,
+						"y": 200
+					}
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "kias",
+						"ratio": 2.1,
+						"offset": 10,
+						"min": 0,
+						"max": 1200
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/kias.png",
+					"anchor": {
+						"x": 0,
+						"y": 100
+					},
+					"size": {
+						"x": 80,
+						"y": null
+					},
+					"position": {
+						"x": -210,
+						"y": 20
+					},
+					"iconFrame": {
+						"x": 40,
+						"y": 160
+					},
+					"drawOrder": 1
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "altThousands",
+						"ratio": 0.2385,
+						"offset": 280,
+						"min": 0,
+						"max": 100000
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/altitude.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 50,
+						"y": null
+					},
+					"position": {
+						"x": 170,
+						"y": -150
+					},
+					"iconFrame": {
+						"x": 32,
+						"y": 170
+					},
+					"drawOrder": 1
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "altThousands",
+						"ratio": 0.238,
+						"offset": 95,
+						"min": 0,
+						"max": 100000
+					}, {
+						"type": "translateX",
+						"value": "altTensShift",
+						"ratio": -22.7,
+						"min": 0,
+						"max": 100000
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"name": "altten",
+					"url": "images/instruments/hud/altitudetens.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 334,
+						"y": 200
+					},
+					"position": {
+						"x": 155,
+						"y": -150
+					},
+					"iconFrame": {
+						"x": 15,
+						"y": 170
+					},
+					"drawOrder": 1
+				}, {
+					"animations": [{
+						"type": "translateX",
+						"value": "heading360",
+						"ratio": -2.64,
+						"offset": 12
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/compass.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 2000,
+						"y": null
+					},
+					"offset": {
+						"x": 0,
+						"y": -10
+					},
+					"position": {
+						"x": -170,
+						"y": -270
+					},
+					"iconFrame": {
+						"x": 200,
+						"y": 30
+					},
+					"drawOrder": 1
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "machUnits",
+						"ratio": 23,
+						"offset": 1
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/digits.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 11,
+						"y": null
+					},
+					"position": {
+						"x": -155,
+						"y": -202
+					},
+					"iconFrame": {
+						"x": 11,
+						"y": 23
+					},
+					"drawOrder": 2
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "machTens",
+						"ratio": 23,
+						"offset": 1
+					},{
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/digits.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 11,
+						"y": null
+					},
+					"position": {
+						"x": -141,
+						"y": -202
+					},
+					"iconFrame": {
+						"x": 11,
+						"y": 23
+					},
+					"drawOrder": 2
+				}, {
+					"animations": [{
+						"type": "translateY",
+						"value": "machHundredth",
+						"ratio": 23,
+						"offset": 1
+					}, {
+						"type": "show",
+						"value": "optionalAnimatedPartPosition",
+                                                "notEq": 1
+					}],
+					"url": "images/instruments/hud/digits.png",
+					"anchor": {
+						"x": 0,
+						"y": 0
+					},
+					"size": {
+						"x": 11,
+						"y": null
+					},
+					"position": {
+						"x": -131,
+						"y": -202
+					},
+					"iconFrame": {
+						"x": 11,
+						"y": 23
+					},
+					"drawOrder": 2
+				}]
+			},
+			"cockpit": {
+				"position": [-0.494385, 29.5444, 0.752139],
+				"scale": 0.6
+			},
+			"animations": [{
+				"value": "cameraMode",
+				"type": "show",
+				"eq": "cockpit"
+			}]
+		},
+        "pfd": {
+            "overlay": {
+                "url": "images/instruments/a380pfd/a380pfd.png",
+                "size": {"x": 200, "y": 200},
+                "anchor": {"x": 256, "y": 256},
+                "position": {"x": 0, "y": 0},
+                "drawOrder": 1,
+                "rescale": true,
+                "rescalePosition": true,
+                "overlays": [{
+                    "animations": [{
+                        "type": "rotate",
+                        "value": "aroll",
+                        "ratio": -1,
+                        "min": -180,
+                        "max": 180
+                    },
+                        {
+                            "type": "translateY",
+                            "value": "atilt",
+                            "ratio": -2,
+                            "offset": 330,
+                            "min": -90,
+                            "max": 90
+                        }
+                    ],
+                    "url": "images/instruments/attitude-jet-hand.png",
+                    "anchor": {"x": 100, "y": 70},
+                    "size": {"x": 180, "y": null},
+                    "position": {"x": -16, "y": 8},
+                    "drawOrder": 0,
+                    "iconFrame": {"x": 200, "y": 140}
+                },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "value": "kias",
+                                "ratio": 2.1,
+                                "offset": 0,
+                                "min": 0,
+                                "max": 1200
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/kias.png",
+                        "anchor": {"x": 0, "y": 100},
+                        "size": {"x": 30, "y": 100},
+                        "position": {"x": -98, "y": 14},
+                        "iconFrame": {"x": 40, "y": 170},
+                        "drawOrder": 1
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "function": "{return geofs.animation.values['altThousands'] = geofs.animation.values['altitude'] % 10000}",
+                            "ratio": 0.2385,
+                            "offset": 260,
+                            "min": 0,
+                            "max": 100000
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/altitude.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 15, "y": null},
+                        "position": {"x": 51, "y": -44},
+                        "iconFrame": {"x": 32, "y": 220},
+                        "drawOrder": 1
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "value": "altThousands",
+                                "ratio": 0.238,
+                                "offset": 75,
+                                "min": 0,
+                                "max": 100000
+                            },
+                            {
+                                "type": "translateX",
+                                "function": "{return Math.floor(geofs.animation.values['altitude'] % 100000 / 10000); }",
+                            "ratio": -22.7,
+                            "min": 0,
+                            "max": 100000
+                            }
+                        ],
+                        "name": "altten",
+                        "url": "images/instruments/a380pfd/altitudetens.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 100, "y": null},
+                        "position": {"x": 47, "y": -44},
+                        "iconFrame": {"x": 10, "y": 220},
+                        "drawOrder": 1
+                    },          {
+                        "animations": [
+                            {
+                                "type": "rotate",
+                                "function": "{geofs.animation.values['climbrateABS'] = Math.abs(geofs.animation.values['climbrate']); geofs.animation.values['climbrateLog'] = Math.sign(geofs.animation.values['climbrate']) * Math.log(geofs.animation.values['climbrateABS']); return geofs.animation.values['climbrateLog']}",
+                                "ratio": -8.6,
+                                "offset": 0,
+                                "min": -8.7,
+                                "max": 8.7
+                            },
+                            {
+                                "type": "scaleX",
+                                "value": "climbrateABS",
+                                "ratio": 0.005,
+                                "offset": 0,
+                                "min": 1500,
+                                "max": 5000
+                            },
+                            {
+                                "type": "moveY",
+                                "value": "climbrateLog",
+                                "ratio": 3.8,
+                                "offset": 0,
+                                "min": -8.7,
+                                "max": 8.7
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/vario.png",
+                        "anchor": {"x": 50, "y": 2},
+                        "size": {"x": 10, "y": 2},
+                        "position": {"x": 90, "y": 7},
+                        "drawOrder": 1
+                    },
+                    {
+                        "url": "images/instruments/a380pfd/altitude-mask.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 30, "y": null},
+                        "position": {"x": 43, "y": -1},
+                        "drawOrder": 1
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "function": "{return geofs.animation.values['altitude'] % 100}",
+                            "ratio": 0.83,
+                            "offset": 0
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/tenfeet.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 9, "y": null},
+                        "position": {"x": 62, "y": 1},
+                        "iconFrame": {"x": 20, "y": 35},
+                        "drawOrder": 2
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "function": "{return Math.floor(geofs.animation.values['altitude'] % 1000 / 100)}",
+                            "ratio": 23,
+                            "offset": 5
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/digits.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 6, "y": null},
+                        "position": {"x": 55, "y": 2},
+                        "iconFrame": {"x": 11, "y": 23},
+                        "drawOrder": 2
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "function": "{return Math.floor(geofs.animation.values['altitude'] % 10000 / 1000)}",
+                            "ratio": 23,
+                            "offset": 5
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/digits.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 6, "y": null},
+                        "position": {"x": 50, "y": 2},
+                        "iconFrame": {"x": 11, "y": 23},
+                        "drawOrder": 2
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateY",
+                                "function": "{return Math.floor(geofs.animation.values['altitude'] % 100000 / 10000)}",
+                            "ratio": 23,
+                            "offset": 5
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/digits.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 6, "y": null},
+                        "position": {"x": 45, "y": 2},
+                        "iconFrame": {"x": 11, "y": 23},
+                        "drawOrder": 2
+                    },
+                    {
+                        "animations": [
+                            {
+                                "type": "translateX",
+                                "value": "heading360",
+                                "ratio": -2.64,
+                                "offset": 0
+                            }
+                        ],
+                        "url": "images/instruments/a380pfd/compass.png",
+                        "anchor": {"x": 0, "y": 0},
+                        "size": {"x": 600, "y": null},
+                        "position": {"x": -60, "y": -87},
+                        "iconFrame": {"x": 160, "y": 25},
+                        "drawOrder": 1
+                    }
+                ]
+            },
+         "cockpit": {
+				"position": [-0.583134, 15.3663, -0.163568],
+				"scale": 1.7
+			},
+			"animations": [{
+				"value": "view",
+				"type": "show",
+				"eq": "cockpit"
+			}]
+		}
+	},	
+	
+   "parts": [
+        {
+            "name": "root",
+            "type": "root",
+            "position": [0, 0, 0],
+              "model": "216.glb",
+              "textures": [{"index":0, "filename": "texture_"}]
+		},
+
+	{
+        "name": "body",
+        "type": "airfoil",
+        "position": [0, 0, 0],
+        "area": 32,
+        "forceDirection": "X",
+        "buoyancy": 32000,
+        "points": {
+            "forceSourcePoint": [0, 0, 0]
+        },
+    "collisionPoints": [
+				[0, -15, 9.8],
+				[-9.36, 0, 2.959],
+				[9, -1.048, 1.724],
+				[-5.7, 5, -2.1],
+				[5.7, 5, -2.1],
+				[-7.3, -17, 2.4],
+				[7.3, -17, 2.4],
+				[0, -15.5233, -0.706686],
+				[0, -14.5233, -0.776504],
+				[0, -13.5101, -1.02059],
+				[0, -12.1687, -1.20047],
+				[0, -0.827646, -1.48437],
+				[0, -8.74234, -1.46881],
+				[0, -10, -0.5]
+			]
+		},
+
+     {
+			"name": "glass",
+			"node": "Plane.013",
+			"animations": [{
+				"type": "justhide",
+				"value": "view",
+				"eq": "cockpit"
+			}]
+		},
+
+                {
+			"name": "Circle",
+			"node": "Plane.003",
+			"animations": [{
+				"type": "justhide",
+				"value": "view",
+				"eq": "cockpit"
+			}]
+		},
+
+    
+   {
+            "name": "Cockpit fake",
+            "model": "../../../../backend/aircraft/repository/airbus a320-214 (Indigo)_427352_2865/cockpi.glb",
+            "animations": [
+                {"type": "hide", "value": "view", "notEq": "cockpit"}
+            ]
+        },
+  
+   {
+            "name": "text",
+            "model": "../../../../backend/aircraft/repository/airbus a320-214 (Indigo)_427352_2865/txt.glb",
+            "animations": [
+                {"type": "hide", "value": "view", "notEq": "cockpit"}
+            ]
+        },
+
+
+		{
+			"name": "wingLeft1",
+			"node": "Empty.006",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "atilt",
+				"ratio": 0.15,
+				"offset": 0,
+				"fmax": 3,
+				"fmin": -5
+			}]
+		},
+
+		{
+			"name": "wing_left2",
+			"node": "Empty.004",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "atilt",
+				"ratio": 0.1,
+				"offset": 0,
+				"fmax": 3,
+				"fmin": -5
+			}]
+		},
+{
+
+        "name": "leftwing",
+        "type": "airfoil",
+       	"position": null,
+        "area": 78,
+        "forceDirection": "Z",
+        "points": {
+			"forceSourcePoint": [7, 0.7, 1]
+		},
+        "stallIncidence": 22,
+        "zeroLiftIncidence": 11,
+        "stalls": true
+    },
+    
+
+    {
+        "name": "aileron_left",
+        "type": "airfoil",
+		"node": "aileron_left",
+		"area": 5.8,
+        "position": [-11, -2, 0],
+        "forceDirection": "Z",
+        "points": {
+        	"forceSourcePoint": [-3, 0, 0]
+        },
+        "animations": [
+        	{"type": "rotate", "axis": "X", "value": "roll", "ratio": -25}
+        ]
+    },
+
+   
+   {
+
+			"name": "Circle.023",
+			"node": "Circle.023",
+			"animations": [{
+				"type": "justhide",
+				"value": "view",
+				"eq": "cockpit"
+			}]
+		},
+
+
+		{
+
+			"name": "Circle.024",
+			"node": "Circle.024",
+			"animations": [{
+				"type": "justhide",
+				"value": "view",
+				"eq": "cockpit"
+			}]
+		},
+
+
+		{
+			"name": "outboard_flap_left_1",
+			"type": "airfoil",
+			"node": "outboard_flap_left_1",
+			"area": 11,
+			"forceDirection": "Z",
+			"points": {
+				"forceSourcePoint": [0, 4, -2]
+			},
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -0.6
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.0025
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.0003
+				}
+			]
+		},
+
+		{
+			"name": "flapleft1",
+			"node": "flapleft1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -5
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.091
+				}
+			]
+		},
+{
+			"name": "subflapl",
+			"node": "Empty.013",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -4.3
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.025
+				}
+			]
+		},
+{
+			"name": "subflapl2",
+			"node": "Empty.012",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -4.3
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.025
+				}
+			]
+		},
+		{
+			"name": "flapleft2",
+			"node": "flapleft2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -5
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.089
+				}
+			]
+		},
+
+		{
+			"name": "flap_faring_left_1",
+			"node": "flap_faring_left_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.2
+			}]
+		},
+
+		{
+			"name": "flap_faring_left_2",
+			"node": "flap_faring_left_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+	{
+			"name": "sub fairing 1l",
+			"node": "sub fairing 1l",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -3.4
+			}]
+		},
+	{
+			"name": "sub fairing 2l",
+			"node": "sub fairing 2l",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -3.4
+			}]
+		},
+	{
+			"name": "sub fairing 3l",
+			"node": "sub fairing 3l",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+	{
+			"name": "sub fairing 4l",
+			"node": "sub fairing 4l",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+	{
+			"name": "sub fairing 5l",
+			"node": "sub fairing 5l",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+		{
+			"name": "inboard_flap_left_2",
+			"node": "inboard_flap_left_2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -5.5
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.085
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.028
+				}
+
+			]
+		},
+
+		{
+			"name": "inboard_flap_left_1",
+			"node": "inboard_flap_left_1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -6.4
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.070
+				}
+			]
+		},
+
+		{
+			"name": "flap_faring_left_3",
+			"node": "flap_faring_left_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+
+		{
+			"name": "pylon_flap_faring_left_3",
+			"node": "pylon_flap_faring_left_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+
+		{
+			"name": "slat_left",
+			"node": "slat_left",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.008
+				}
+			]
+		},
+
+		{
+	 "name": "slat_l_1",
+	 "node": "slat_left_1",
+	 "animations": [
+		{"type": "rotate", "axis": "X", "value": "flapsPosition", "ratio": 7},
+		{"type": "translate", "axis": "Y", "value": "flapsPosition", "ratio": -0.03},
+		{"type": "translate", "axis": "Z", "value": "flapsPosition", "ratio": -0.09}
+	 ]
+	},
+
+		 {
+			"name": "slat left 2",
+			"node": "slat left 2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "rotate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": 0.2
+				},
+
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -0.075
+				},
+                                 {
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.03
+				}
+			]
+		},
+	 {
+			"name": "slat left 3",
+			"node": "Empty.005",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "rotate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.2
+				},
+{
+					"type": "rotate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.3
+				},
+
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -0.082
+				},
+
+                                 {
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.015
+				}
+			]
+		},
+		{
+			"name": "kreuger_left_1",
+			"node": "kreuger_left_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": 8
+			}]
+		},
+
+		{
+			"name": "spoiler_left_airfoil",
+			"type": "airfoil",
+			"liftFactor": 0,
+			"dragFactor": 15,
+			"forceDirection": "Z",
+			"position": [7, -1, 0],
+			"points": {
+				"forceSourcePoint": [0, 0, 0]
+			},
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 90
+			}]
+		},
+
+		{
+			"name": "spoiler_left_1",
+			"node": "spoiler_left_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+		{
+			"name": "spoiler_left_2",
+			"node": "spoiler_left_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+		{
+			"name": "spoiler_left_3",
+			"node": "spoiler_left_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_left_4",
+			"node": "spoiler_left_4",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_left_5",
+			"node": "spoiler_left_5",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_left_6",
+			"node": "spoiler_left_6",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoileractu_left_1",
+			"node": "spoileractu_left_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 65
+			}]
+		},
+		{
+			"name": "spoileractu_left_2",
+			"node": "spoileractu_left_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+
+
+		{
+        "name": "outboard_flap_right_1",
+        "type": "airfoil",
+        "node": "outboard_flap_right_1",
+        "area": 11,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [0, 4, -2]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "flapsPosition", "ratio": -0.6},
+            {"type": "translate", "axis": "Y", "value": "flapsPosition", "ratio": -0.0025},
+            {"type": "translate", "axis": "Z", "value": "flapsPosition", "ratio": -0.0003}
+        ]
+    },
+		{
+			"name": "outboard_flap_right_2",
+			"node": "outboard_flap_right_2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -2.5
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.0012
+				}
+			]
+		},
+
+		{
+			"name": "flap_faring_right_1",
+			"node": "flap_faring_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+
+		{
+			"name": "pylon_flap_faring_right",
+			"node": "pylon_flap_faring_right",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+
+		{
+			"name": "flap_faring_right_2",
+			"node": "flap_faring_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+
+		{
+			"name": "flap_faring_R_3",
+			"node": "flap_faring_R_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.2
+			}]
+		},
+{
+			"name": "sub fairing 1r",
+			"node": "sub fairing 1r",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -3.4
+			}]
+		},
+	{
+			"name": "sub fairing 2r",
+			"node": "sub fairing 2r",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -3.4
+			}]
+		},
+	{
+			"name": "sub fairing 3r",
+			"node": "sub fairing 3r",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+	{
+			"name": "sub fairing 4r",
+			"node": "sub fairing 4r",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+	{
+			"name": "sub fairing 5r",
+			"node": "sub fairing 5r",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -4.6
+			}]
+		},
+		{
+			"name": "inboard_flap_right_1",
+			"node": "inboard_flap_right_1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -6.4
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.070
+				}
+			]
+		},
+
+		{
+			"name": "inboard_flap_right_2",
+			"node": "inboard_flap_right_2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -5.5
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.085
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.028
+				}
+			]
+		},
+
+		{
+			"name": "outboard_flap_R",
+			"node": "outboard_flap_R",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "flapsPosition",
+				"ratio": -2.5
+			}]
+		},
+
+		{
+			"name": "inboard_flap_R_1",
+			"node": "inboard_flap_R_1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -4.2
+				},
+				{
+					"type": "translate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -0.078
+				}
+			]
+		},
+
+		{
+			"name": "flap_faring_right_4",
+			"node": "flap_faring_right_4",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": -0.4
+			}]
+		},
+
+		{
+			"name": "slat_right",
+			"node": "slat_right",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": 0.0014
+				}
+			]
+		},
+
+		{
+	 "name": "slat_r_1",
+	 "node": "slat_r_1",
+	 "animations": [
+		{"type": "rotate", "axis": "X", "value": "flapsPosition", "ratio": 7},
+		{"type": "translate", "axis": "Y", "value": "flapsPosition", "ratio": -0.03},
+		{"type": "translate", "axis": "Z", "value": "flapsPosition", "ratio": -0.09}
+	 ]
+	},
+		{
+			"name": "slat right 2",
+			"node": "slat right 2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "rotate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.1
+				},
+
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -0.075
+				},
+                                 {
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.03
+				}
+			]
+		},
+	{
+			"name": "slat right 3",
+			"node": "Empty.008",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": 7
+				},
+				{
+					"type": "rotate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.2
+				},
+{
+					"type": "rotate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -0.58
+				},
+
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": -0.097
+				},
+
+                                 {
+					"type": "translate",
+					"axis": "Y",
+					"value": "flapsPosition",
+					"ratio": -0.015
+				}
+			]
+		},
+		{
+			"name": "kreuger_right_1",
+			"node": "kreuger_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "flapsPosition",
+				"ratio": 8
+			}]
+		},
+
+		{
+			"name": "spoiler_right_airfoil",
+			"type": "airfoil",
+			"liftFactor": 0,
+			"dragFactor": 15,
+			"forceDirection": "Z",
+			"position": [-7, -1, 0],
+			"points": {
+				"forceSourcePoint": [0, 0, 0]
+			},
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 90
+			}]
+		},
+
+		{
+			"name": "spoiler_right_1",
+			"node": "spoiler_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 65
+			}]
+		},
+		{
+			"name": "spoiler_right_2",
+			"node": "spoiler_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+		{
+			"name": "spoiler_right_3",
+			"node": "spoiler_right_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_4",
+			"node": "spoiler_right_4",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_5",
+			"node": "spoiler_right_5",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_6",
+			"node": "spoiler_right_6",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoileractu_right_1",
+			"node": "spoileractu_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 65
+			}]
+		},
+		{
+			"name": "spoileractu_right_2",
+			"node": "spoileractu_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+
+		
+
+    {
+        "name": "rightwing",
+        "type": "airfoil",
+        "area": 78,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [-7, 0.7, 1]
+        },
+        "stallIncidence": 22,
+        "zeroLiftIncidence": 11,
+        "stalls": true
+    },
+
+
+		{
+			"name": "wingr1",
+			"node": "wingr1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "atilt",
+				"ratio": -0.15,
+				"offset": 0,
+				"fmax": 3,
+				"fmin": -5
+			}]
+		},
+
+
+		{
+			"name": "wingr2",
+			"node": "wingr2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "atilt",
+				"ratio": -0.1,
+				"offset": 0,
+				"fmax": 3,
+				"fmin": -5
+			}]
+		},
+
+    {
+        "name": "aileron_right",
+        "type": "airfoil",
+        "node": "aileron_right",
+        "area": 5.8,
+        "position": [11, -2, 0],
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [3, 0, 0]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "roll", "ratio": 25}
+        ]
+    },
+
+    {
+        "name": "r_flap",
+        "type": "airfoil",
+        "node": "r_flap",
+        "area": 10,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [0, 0, 0]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "flapsPosition", "ratio": -0.6}
+        ]
+    },
+
+    
+		{
+        "name": "outboard_flap_right_1",
+        "type": "airfoil",
+        "node": "outboard_flap_right_1",
+        "area": 11,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [0, 4, -2]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "flapsPosition", "ratio": -0.6},
+            {"type": "translate", "axis": "Y", "value": "flapsPosition", "ratio": -0.0025},
+            {"type": "translate", "axis": "Z", "value": "flapsPosition", "ratio": -0.0003}
+        ]
+    },
+{
+			"name": "flapright1",
+			"node": "flapright1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -5
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.091
+				}
+			]
+		},
+{
+			"name": "subflapright1",
+			"node": "subflapright1",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -3.2
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.025
+				}
+			]
+		},
+{
+			"name": "subflapright2",
+			"node": "Empty.017",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -3.2
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.04
+				}
+			]
+		},
+{
+			"name": "flap_R_2",
+			"node": "flap_R_2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -4
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.089
+				}
+			]
+		},
+{
+			"name": "subflap_R_2",
+			"node": "subflap_R_2",
+			"animations": [{
+					"type": "rotate",
+					"axis": "X",
+					"value": "flapsPosition",
+					"ratio": -2.7
+				},
+				{
+					"type": "translate",
+					"axis": "Z",
+					"value": "flapsPosition",
+					"ratio": 0.04
+				}
+			]
+		},
+       {
+        "name": "spoiler_left_airfoil",
+        "type": "airfoil",
+        "liftFactor": 0,
+        "dragFactor": 15,
+        "forceDirection": "Z",
+        "position": [-7, -1, 0],
+        "points": {
+            "forceSourcePoint": [0, 0, 0]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "airbrakesPosition", "ratio": 90}
+        ]
+    },
+
+    {
+        "name": "spoiler_right_airfoil",
+        "type": "airfoil",
+        "liftFactor": 0,
+        "dragFactor": 15,
+        "forceDirection": "Z",
+        "position": [7, -1, 0],
+        "points": {
+            "forceSourcePoint": [0, 0, 0]
+        },
+        "animations": [
+            {"type": "rotate", "axis": "X", "value": "airbrakesPosition", "ratio": 90}
+        ]
+    },
+
+    {
+			"name": "spoiler_right_1",
+			"node": "spoiler_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+		{
+			"name": "spoiler_right_2",
+			"node": "spoiler_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 45
+			}]
+		},
+		{
+			"name": "spoiler_right_3",
+			"node": "spoiler_right_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_4",
+			"node": "spoiler_right_4",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_5",
+			"node": "spoiler_right_5",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+		{
+			"name": "spoiler_right_6",
+			"node": "spoiler_right_6",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "airbrakesPosition",
+				"ratio": 50
+			}]
+		},
+
+    {
+        "name": "horizontalstab",
+        "type": "airfoil",
+        "position": null,
+        "area": 50.5,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [0, -18, 1.8]
+        }
+       
+    },
+
+    {
+        "name": "verticalstab",
+        "type": "airfoil",
+        "position": null,
+        "area": 50.5,
+        "forceDirection": "X",
+        "points": {
+            "forceSourcePoint": [0, -18, 5.7]
+        }
+    },
+
+
+    {
+			"name": "Elevator Left",
+			"type": "airfoil",
+			"node": "Elevator Left",
+			"position": [2.8, -26, 1.3],
+                        "liftFactor": 60,
+			"dragFactor": 0,
+			"area": 9,
+			"forceDirection": "Z",
+			"points": {
+				"forceSourcePoint": [2.8, -19, 1.3]
+			},
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "rawPitch",
+				"ratio": 25
+			}]
+		},
+
+                {
+			"name": "elevator_left",
+			"node": "elevator_left",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "rawPitch",
+				"ratio": 25
+			}]
+		},
+   {
+			"name": "elevator",
+			"node": "elevator_right",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "rawPitch",
+				"ratio": 25
+			}]
+		},
+		{
+			"name": "elevator2",
+			"type": "airfoil",
+			"node": "Elevator Right",
+			"position": [-2.8, -26, 1.3],
+                        "liftFactor": 59,
+			"dragFactor": 0,
+			"area": 9,
+			"forceDirection": "Z",
+			"points": {
+				"forceSourcePoint": [-2.8, -19, 1.3]
+			},
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "rawPitch",
+				"ratio": 25
+			}]
+		},
+
+    {
+			"name": "rudder",
+			"node": "Empty.002",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "yaw",
+				"ratio": -21
+			}]
+		},
+		{
+			"name": "Rudd",
+			"type": "airfoil",
+                        "liftFactor": 59,
+			"dragFactor": 0,
+			"area": 6,
+			"forceDirection": "X",
+			"points": {
+				"forceSourcePoint": [0, -18, 3.6]
+			},
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "yaw",
+				"ratio": -25
+			}]
+		},
+{
+   "name": "cockpit1",
+   "model": "cp1.glb",
+	"animations": [
+                {"type": "hide", "value": "view", "notEq": "cockpit"}
+            ]
+        },
+
+  {
+			"name": "flaps_indicator",
+			"type": "none",
+			"node": "flaps_indicator",
+                          "parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"function": "{return Math.sqrt(geofs.animation.values['flapsPosition']) * 40;}",
+				"ratio": -1
+			}]
+		},
+
+		{
+			"name": "joystick",
+			"node": "joystick",
+"parent":"cockpit1",
+			"animations": [{
+
+					"type": "rotate",
+					"axis": "Z",
+					"value": "pitch",
+					"ratio": -25
+				},
+
+				{
+					"type": "rotate",
+					"axis": "X",
+					"value": "roll",
+					"ratio": -25
+				}
+			]
+
+		},
+	{
+			"name": "joystick2",
+			"node": "joystick.001",
+"parent":"cockpit1",
+			"animations": [{
+
+					"type": "rotate",
+					"axis": "Z",
+					"value": "pitch",
+					"ratio": -25
+				},
+
+				{
+					"type": "rotate",
+					"axis": "X",
+					"value": "roll",
+					"ratio": -25
+				}
+			]
+
+		},
+		{
+			"name": "trim_wheel_1",
+			"node": "trim_wheel_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "trim",
+				"ratio": -2378
+			}]
+		},
+
+		{
+
+			"name": "trim_wheel_2",
+			"node": "trim_wheel_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "trim",
+				"ratio": 2378
+			}]
+
+
+		},
+		{
+			"name": "leftStick",
+			"type": "none",
+			"node": "stick_left",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "rawPitch",
+				"ratio": -20
+			}]
+		},
+
+		{
+			"name": "leftYoke",
+			"type": "none",
+			"node": "yoke_left",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "roll",
+				"ratio": -40
+			}]
+		},
+
+		{
+			"name": "left_rudder_pedal_1",
+			"node": "left_rudder_pedal_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "translate",
+				"axis": "X",
+				"value": "yaw",
+				"ratio": -0.1
+			}]
+		},
+
+		{
+			"name": "left_rudder_pedal_2 ",
+			"node": "left_rudder_pedal_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "translate",
+				"axis": "X",
+				"value": "yaw",
+				"ratio": 0.1
+			}]
+		},
+
+		{
+			"name": "right_rudder_pedal_1",
+			"node": "right_rudder_pedal_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "translate",
+				"axis": "X",
+				"value": "yaw",
+				"ratio": -0.1
+			}]
+		},
+
+		{
+			"name": "right_rudder_pedal_2",
+			"node": "right_rudder_pedal_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "translate",
+				"axis": "X",
+				"value": "yaw",
+				"ratio": 0.1
+			}]
+		},
+
+		{
+			"name": "tiller",
+			"type": "none",
+			"node": "tiller",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"function": "{return geofs.animation.values['groundContact'] ? geofs.animation.values['yaw'] : 0}",
+				"ratio": 60
+			}]
+		},
+
+		{
+			"name": "tiller2",
+			"type": "none",
+			"node": "tiller2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"function": "{return geofs.animation.values['groundContact'] ? geofs.animation.values['yaw'] : 0}",
+				"ratio": 60
+			}]
+		},
+
+		{
+			"name": "rightStick",
+			"type": "none",
+			"node": "stick_right",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "rawPitch",
+				"ratio": -20
+			}]
+		},
+
+		{
+			"name": "Empty.007",
+			"type": "none",
+			"node": "Empty.007",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "roll",
+				"ratio": -40
+			}]
+		},
+
+		{
+			"name": "throttle_1",
+			"type": "none",
+			"node": "throttle_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "throttle",
+				"ratio": 45,
+				"min": 0.001
+			}]
+		},
+
+		{
+			"name": "throttle_2",
+			"type": "none",
+			"node": "throttle_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "throttle",
+				"ratio": 45,
+				"min": 0.001
+			}]
+		},
+
+		{
+			"name": "reverse_1",
+			"type": "none",
+			"node": "reverse_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "throttle",
+				"ratio": 100,
+				"min": -1,
+				"max": 0.001
+			}]
+		},
+
+		{
+			"name": "reverse_2",
+			"type": "none",
+			"node": "reverse_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "throttle",
+				"ratio": 100,
+				"min": -1,
+				"max": 0.001
+			}]
+		},
+
+		{
+			"name": "cutoff_1",
+			"type": "none",
+			"node": "cutoff_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "enginesOn",
+				"ratio": 30
+			}]
+		},
+
+		{
+			"name": "cutoff_2",
+			"type": "none",
+			"node": "cutoff_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "enginesOn",
+				"ratio": 30
+			}]
+		},
+
+		{
+			"name": "air_brake",
+			"type": "none",
+			"node": "air_brake",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "airbrakesTarget",
+				"ratio": -45
+			}]
+		},
+
+		{
+			"name": "flaps",
+			"type": "none",
+			"node": "flaps",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"function": "{return ([0, 3, 13, 18, 28, 33, 40, 48, 65])[geofs.animation.values['flapsTarget']];}",
+				"ratio": -1
+			}]
+		},
+
+		{
+			"name": "trim",
+			"type": "none",
+			"node": "trim",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "trim",
+				"ratio": -4320
+			}]
+		},
+
+		{
+			"name": "gear_indicator_1",
+			"type": "none",
+			"node": "gear_indicator_1",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "show",
+				"value": "gearPosition",
+				"lt": 1
+			}]
+		},
+
+		{
+			"name": "gear_indicator_2",
+			"type": "none",
+			"node": "gear_indicator_2",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "show",
+				"value": "gearPosition",
+				"lt": 0.01
+			}]
+		},
+
+		{
+			"name": "parking_brake",
+			"type": "none",
+			"node": "parking_brake",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "parkingBrake",
+				"ratio": -45
+			}]
+		},
+
+		{
+			"name": "gear_lever",
+			"type": "none",
+			"node": "gear_lever",
+"parent":"cockpit1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "gearTarget",
+				"ratio": 50
+			}]
+		},
+
+
+
+   
+   {
+			"name": "gear_left",
+			"node": "gear_left",
+                       
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": 90
+			},
+{
+				"type": "hide",
+				"value": "gearPosition",
+				"threshold": 0.7
+			}]
+		},
+
+
+		{
+			"name": "gear_left_suspension",
+			"type": "wheel",
+			"node": "gear_left_suspensio",
+ "position": [4, -0.5, -0.05],
+			"collisionPoints": [
+				[0, -1.20889, -4.88466]
+			],
+			"suspension": {
+				"motion": "translate",
+				"axis": "Z",
+				"ratio": 1,
+				"stiffness": 60,
+				"damping": 1.62
+			}
+		},
+
+
+		{
+
+			"name": "gear_right.001",
+			"node": "gear_right.001",
+			"animations": [{
+				"type": "hide",
+				"value": "gearPosition",
+				"threshold": 0.7
+			}]
+		},
+
+		{
+
+			"name": "gear_acturator_L",
+			"node": "gear_acturator_L",
+			"animations": [{
+				"type": "hide",
+				"value": "gearPosition",
+				"threshold": 0.11
+			}]
+		},
+
+		{
+			"name": "gear_actuator_left",
+			"node": "gear_actuator_left",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": 35
+			}]
+		},
+
+		{
+			"name": "gear_actuator_left_2",
+			"node": "gear_actuator_left_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": -180
+			}]
+		},
+
+		{
+			"name": "gear_actuator_left_3",
+			"node": "gear_actuator_left_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": 200,
+				"fmax": 150
+			}]
+		},
+
+		{
+			"name": "gear_door_left_1",
+			"node": "gear_door_left_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": 90
+			}]
+		},
+
+		{
+			"name": "gear_door_left_2",
+			"node": "gear_door_left_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "gearPosition",
+				"valueRamp": [0, 0, 0, 80, 80, 80, 80, 0]
+			}]
+		},
+
+		{
+			"name": "gear_door_left_3",
+			"node": "gear_door_left_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": 85
+			}]
+		},
+
+		{
+			"name": "wheels_left",
+			"type": "none",
+			"node": "wheels_left.001",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "gear_left_suspensionRotation",
+				"ratio": -2
+			}]
+		},
+
+
+		{
+			"name": "gear_right",
+			"node": "gear_right",
+                 
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": -90
+			},
+{
+				"type": "hide",
+				"value": "gearPosition",
+				"threshold": 0.7
+			}]
+		},
+
+
+		{
+			"name": "gear_right_suspension",
+			"type": "wheel",
+			"node": "gear_right_suspensio",
+                 "position": [-4, -0.5, -0.05],
+			"collisionPoints": [
+				[-0, -1.20889, -4.88466]
+			],
+			"suspension": {
+				"motion": "translate",
+				"axis": "Z",
+				"ratio": 1,
+				"stiffness": 60,
+				"damping": 1.62
+			}
+		},
+
+               
+{
+
+			"name": "gear_acturator_R",
+			"node": "gear_acturator_R",
+			"animations": [{
+				"type": "hide",
+				"value": "gearPosition",
+				"threshold": 0.11
+			}]
+		},
+
+
+		{
+			"name": "gear_actuator_right",
+			"node": "gear_actuator_right",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": -35
+			}]
+		},
+
+		{
+			"name": "gear_actuator_right_2",
+			"node": "gear_actuator_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": 180
+			}]
+		},
+
+		{
+			"name": "gear_actuator_right_3",
+			"node": "gear_actuator_right_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": -200,
+				"fmin": -150
+			}]
+		},
+
+		{
+			"name": "gear_door_right_1",
+			"node": "gear_door_right_1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": -88.5
+			}]
+		},
+
+		{
+			"name": "gear_door_right_2",
+			"node": "gear_door_right_2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "gearPosition",
+				"valueRamp": [0, 0, 0, -80, -80, -80, -80, 0]
+			}]
+		},
+
+		{
+			"name": "gear_door_right_3",
+			"node": "gear_door_right_3",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Y",
+				"value": "gearPosition",
+				"ratio": -85
+			}]
+		},
+
+		{
+			"name": "wheels_right",
+			"type": "none",
+			"node": "wheels_left.004",
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "gear_right_suspensionRotation",
+				"ratio": 2
+			}]
+		},
+                
+		{
+			"name": "nose_leg",
+			"node": "nose_leg",
+			
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": 110,
+				"delay": -0.5
+			}]
+		},
+
+
+		{
+			"name": "nose_suspension",
+			"type": "wheel",
+			"node": "nose_suspensio",
+"position": [0, 9, 0],
+			"animations": [{
+				"type": "rotate",
+				"axis": "Z",
+				"value": "yaw",
+				"ratio": 30
+			}],
+			"collisionPoints": [
+				[0, 12, -4.65581]
+			],
+			"suspension": {
+				"motion": "translate",
+				"axis": "Z",
+				"ratio": 1,
+				"stiffness": 12,
+				"damping": 1.62
+			}
+
+		},
+
+                 {
+        "name": "frontGearFake",
+        "type": "wheel",
+        "node": "Nose Gear",
+        "position": [-0.02, 13, -2],
+        "collisionPoints": [
+            [0, 0, -0.5]
+        ],
+        "animations": [
+                {"type": "rotate", "axis": "X", "value": "gearPosition", "ratio": -80},
+            {"type": "rotate", "axis": "Z", "value": "yaw", "ratio": 30},
+            {"type": "justhide", "value": "view", "eq": "cockpit"}
+            ]
+    },
+	{
+			"name": "wheels_f",
+			"type": "none",
+			"node": "Cylinder.030",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gear_right_suspensionRotation",
+				"ratio": 2
+			}]
+		},
+		{
+			"name": "front_wheels",
+			"node": "front_wheels",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "yaw",
+				"ratio": -35
+			}]
+		},
+
+		{
+			"name": "retract_rod_nose_leg",
+			"node": "retract_rod_nose_leg",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": 110,
+				"delay": -0.5
+			}]
+		},
+
+		{
+			"name": "front_gear_door_left",
+			"node": "front_gear_door_right.001",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": 87,
+				"delay": 0.5
+			}]
+		},
+
+		{
+			"name": "front_gear_door_right",
+			"node": "front_gear_door_right",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"ratio": -87,
+				"delay": 0.5
+			}]
+		},
+
+		{
+			"name": "f_gear_door1",
+			"node": "f_gear_door1",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"valueRamp": [0, 0, 0, -80, -80, -80, -80, 0]
+			}]
+		},
+
+		{
+			"name": "f_gear_door2",
+			"node": "f_gear_door2",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "gearPosition",
+				"valueRamp": [0, 0, 0, 80, 80, 80, 80, 0]
+			}]
+		},
+
+
+    {
+        "name": "geardrag",
+        "type": "airfoil",
+        "position": [0, 0, 0],
+        "liftFactor": 0,
+        "dragFactor": 7,
+        "forceDirection": "Z",
+        "points": {
+            "forceSourcePoint": [0, 0, 0]
+        },
+        "animations": [
+            {"type": "rotate", "frame": "parent", "axis": "X", "value": "gearPosition", "ratio": -90}
+        ],
+        "rotation": [90, 0, 0]
+    },
+
+                     {
+			"name": "Empty.009",
+			"node": "Empty.009",
+			"animations": [{
+				"type": "translate",
+				"axis": "Z",
+				"value": "atilt",
+				"ratio": -0.00001
+			}]
+		},
+	
+	{
+			"name": "engine1",
+			"type": "engine",
+			"thrust": 133700,
+			"reverseThrust": 76000,
+			"forceDirection": "Y",
+			"contrail": true,
+			"points": {
+				"forceSourcePoint": [-5.8, 0, -1.75743],
+				"contrailAnchor": [-5.8, -9.5, -1.75743]
+			}
+		},
+
+                     {
+			"name": "fan_left",
+			"node": "fan_left",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "prop",
+				"ratio": -1
+			}]
+		},
+		
+		{
+			"name": "engine2",
+			"type": "engine",
+			"thrust": 133700,
+			"reverseThrust": 76000,
+			"forceDirection": "Y",
+			"contrail": true,
+			"points": {
+				"forceSourcePoint": [5.8, 0, -1.75743],
+				"contrailAnchor": [5.8, -9.5, -1.75743]
+			}
+		},
+    
+
+  
+   {
+			"name": "fan_right",
+			"node": "fan_right",
+			"animations": [{
+				"type": "rotate",
+				"axis": "X",
+				"value": "prop",
+				"ratio": -1
+			}]
+		},
+  {
+	 "name": "reverse_left",
+	 "node": "reverse_left",
+	 "animations": [
+		{"type": "translate", "axis": [0, 1, 0], "value": "thrust", "max": 1, "ratio": 0.00000193}
+			]
+	},
+		{
+	 "name": "reverse_right",
+	 "node": "reverse_right",
+	 "animations": [
+		{"type": "translate", "axis": [0, 1, 0], "value": "thrust", "min": -50000, "max": 1, "ratio": 0.0000004}
+			]
+	},
+		{
+			"name": "leftlight",
+			"light": "red",
+			"animations": [{
+				"type": "show",
+				"value": "night"
+			},
+{
+				"type": "translate",
+				"axis": "Z",
+				"value": "atilt",
+				"ratio": -0.2,
+				"fmin": -0.6,
+                                "fmax": 0.7
+				
+			}],
+			"position": [-16.5724 , -3.35915, -0.080059]
+		},
+
+		{
+			"name": "bottomlight",
+			"light": "red",
+			"animations": [{
+				"type": "strobe",
+				"value": "night"
+			}],
+			"position": [-0.032419, 0.88506, -2.97171]
+		},
+
+		{
+			"name": "rightlight",
+			"light": "green",
+			"animations": [{
+				"type": "show",
+				"value": "night"
+			},
+{
+				"type": "translate",
+				"axis": "Z",
+				"value": "atilt",
+				"ratio": -0.2,
+				"fmin": -0.6,
+                                "fmax": 0.7
+				
+			}],
+			"position": [16.5724 , -3.35915, -0.080059]
+		},
+
+		{
+			"name": "strobe1",
+			"light": "white",
+			"animations": [{
+				"type": "show",
+				"value": "strobe"
+			},
+{
+				"type": "translate",
+				"axis": "Z",
+				"value": "atilt",
+				"ratio": -0.2,
+				"fmin": -0.6,
+                                "fmax": 0.7
+				
+			}],
+                        "parent":"Empty.009",
+			"position": [-17.0207,-5.06948,-0.034687]
+		},
+		{
+			"name": "strobe2",
+			"light": "white",
+			"animations": [{
+				"type": "show",
+				"value": "strobe"
+			},
+{
+				"type": "translate",
+				"axis": "Z",
+				"value": "atilt",
+				"ratio": -0.2,
+				"fmin": -0.6,
+                                "fmax": 0.7
+				
+			}],
+			"position": [17.0207,-5.06948,-0.034687]
+		},
+		{
+			"name": "strobe3",
+			"light": "white",
+			"animations": [{
+				"type": "show",
+				"value": "strobe2"
+			}],
+			"position": [2.05034, 3.72238, -1.97255]
+		},
+		{
+			"name": "strobe4",
+			"light": "white",
+			"animations": [{
+				"type": "show",
+				"value": "strobe2"
+			}],
+			"position": [-2.05034, 3.72238, -1.97255]
+		}
+	],
+	
+
+    "contactProperties": {
+        "wheel": {        
+        	"frictionCoef": 5,
+        	"dynamicFriction": 0.01,
+        	"rollingFriction": 0.00001,
+            "lockSpeed": 0.008,
+
+            "damping": 1
+        },
+        "frame": {
+        	"frictionCoef": 2,
+        	"dynamicFriction": 0.01,
+        
+            "damping": 1
+        },
+	    "airfoil": {
+        	"frictionCoef": 2,
+        	"dynamicFriction": 0.01,
+
+            "damping": 1
+        }
+    },
+    "soundSet": "player",
+    
+    "sounds": [
+    	{
+    		"id": "rpm1",
+    		"file": "sounds/737/rpm0.ogg",
+    		"effects": {
+    			"volume": {"value": "rpm", "ramp": [800, 950, 2500, 3500]},
+    			"pitch": {"value": "rpm", "ramp": [0, 20000, 20000, 20000], "ratio": 1, "offset": 1}
+			}
+    	},
+    	{
+    		"id": "rpm2",
+    		"file": "sounds/737/rpm1.ogg",
+    		"effects": {
+    			"volume": {"value": "rpm", "ramp": [1000, 2500, 10000, 10000]},
+    			"pitch": {"value": "rpm", "ramp": [0, 20000, 20000, 20000], "ratio": 1.5, "offset": 1}
+			}
+    	},
+
+        {
+            "id": "rpm3",
+            "file": "sounds/737/rpm2.ogg",
+            "effects": {
+                "volume": {"value": "rpm", "ramp": [6000, 20000, 20000, 20000]},
+                "pitch": {"value": "rpm", "ramp": [1000, 20000, 20000, 20000], "ratio": 1, "offset": 1}
+            }
+        },
+
+        {
+            "id": "rolling",
+            "file": "sounds/tyres/rolling1.ogg",
+            "fadeDuration": 500,
+            "effects": {
+                "volume": {"value": "rollingSpeed", "ramp": [0, 50, 1000, 1000]}
+            }
+        },
+
+        {
+            "id": "touch1",
+            "file": "sounds/tyres/touch1.ogg",
+            "effects": {
+                "start": {"value": "maxAngularVRatio", "gt": 300}
+            }
+        },
+    	
+    	{
+    		"id": "startup",
+    		"file": "sounds/737/startup.ogg"
+    	},
+    	{
+    		"id": "shutdown",
+    		"file": "sounds/737/shutdown.ogg"
+    	} 	
+    ],
+    
+   "cameras": {
+		"follow": {
+			"distance": 60
+		},
+		"cockpit": {
+			"position": [-0.680548, 19.1473 , 0],
+			"orientation": [0, -12, 0],
+			"FOV": 1.5
+		},
+		"Wheels back": {
+			"position": [0, -6.503925, -4.13219],
+			"orientation": [0, 0, 0]
+		},
+		"Wheels front": {
+			"position": [0, 8, -4.13219],
+			"orientation": [180, 0, 0]
+		},
+		"Left wing": {
+			"position": [-2, -4.38458, -0.124289],
+			"orientation": [-80, -10, 0]
+		},
+		"Left wing CFM": {
+			"position": [-1.80164, 8.16973, -0.106238],
+			"orientation": [-116, -4, 0]
+		},
+		"Right wing CFM": {
+			"position": [1.80164, 8.16973, -0.106238],
+			"orientation": [116, -4, 0]
+		},
+		"Right wing": {
+			"position": [2, -4.38458, -0.124289],
+			"orientation": [80, -10, 0]
+		},
+		"Tail": {
+			"position": [0, -19.5, 8],
+			"orientation": [0, -20, 0]
+		}
+	},
+
+	"cockpitModel": true,
+	"shadowBox": [20, 18]
+}]
